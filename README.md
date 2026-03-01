@@ -8,6 +8,8 @@
 |-------|------|
 | [skill-creator](./Skills/skill-creator/SKILL.md) | 创建新 Skill、迭代优化现有 Skill、运行评测与基准测试、优化触发描述 |
 | [tech-research](./Skills/tech-research/SKILL.md) | 执行系统化技术调研，涵盖技术选型、可行性分析、框架对比，输出结构化调研报告 |
+| [find-skills](./Skills/find-skills/SKILL.md) | 在技能生态中搜索并安装可扩展 Agent 能力的技能包 |
+| [excel-analysis](./Skills/excel-analysis/SKILL.md) | 分析 Excel 文件，支持透视表、图表生成与数据清洗 |
 | [readme-sync](./Skills/readme-sync/SKILL.md) | 对比 Skills 目录与 README 列表，自动将新增或删除的 Skill 同步到 README |
 
 ## 使用方式

@@ -1,13 +1,32 @@
 ---
 name: readme-sync
-description: 维护 GameDevSkills 的 README.md，将 Skills/ 下新增或变更的 Skill 同步到 Skills 列表。当用户说“更新 README”“同步 Skills 列表”“新增 Skill 了”“刷新库”等时使用本 skill。
+description: 维护 GameDevSkills 的 README.md。按“先同步文件、再同步清单”的方式：先把本机 ~/.agents/skills 同步到仓库 Skills/（只增不删），再将变更反映到 README Skills 列表。用户说“更新 README”“同步 Skills”“刷新列表”“新增/安装 Skill 了”等时使用本 skill。
 ---
 
 # readme-sync
 
 维护 `GameDevSkills` 仓库的 `README.md`，确保 Skills 列表与 `Skills/` 目录保持一致，且每个 Skill 在 README 中只占一行。
 
+## 约束与规则
+- 默认只做“新增/更新”，不自动删除仓库 `Skills/` 中的文件
+- README 中出现“目录不存在的 skill”属于潜在删除项：必须先向用户确认再移除条目
+- README 中每个 skill 只占一行，避免重复登记（同名只保留一条）
+
 ## 操作流程
+
+### 0) 同步 Skill 文件
+在仓库根目录运行 `sync-skills.bat`，将本机 `~/.agents/skills`（Windows 通常为 `%USERPROFILE%\.agents\skills`）同步到仓库 `Skills/` 目录（只增不删）。
+
+PowerShell：
+```powershell
+& ".\sync-skills.bat"
+```
+
+退出码处理：
+- `0–7`：视为成功（0=无变化，1=有复制，3=新增+复制等）
+- `≥ 8`：视为失败；提示用户检查 robocopy 输出并终止，不继续后续步骤
+
+备注：如你的本机 skills 目录不在上述位置，请调整 `sync-skills.bat` 里的 `SRC` 变量。
 
 ### 1) 读取现状
 并行完成：
