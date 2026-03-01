@@ -11,6 +11,7 @@
 | [find-skills](./Skills/find-skills/SKILL.md) | 在技能生态中搜索并安装可扩展 Agent 能力的技能包 |
 | [excel-analysis](./Skills/excel-analysis/SKILL.md) | 分析 Excel 文件，支持透视表、图表生成与数据清洗 |
 | [readme-sync](./Skills/readme-sync/SKILL.md) | 对比 Skills 目录与 README 列表，自动将新增或删除的 Skill 同步到 README |
+| [setup-agents-md](./Skills/setup-agents-md/SKILL.md) | 为项目初始化 AGENTS.md 及配套子系统文档，为 AI 编码代理提供全局指令 |
 
 ## 使用方式
 
